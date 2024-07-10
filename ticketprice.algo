@@ -1,0 +1,22 @@
+FUNCTION getTPrice(age: INTEGER) : INTEGER
+VAR
+    price : INTEGER;
+BEGIN
+    IF (age <= 12) THEN
+        price := 10; 
+    ELSE_IF (age >= 13) AND (age <= 17) THEN
+        price := 15; 
+    ELSE
+        price := 20;
+    END_IF
+    RETURN price;
+END
+ALGORITHM
+    age : INTEGER;
+    ticketPrice : INTEGER;
+BEGIN
+    PRINT("Enter your age: ");
+    READ(age);
+    ticketPrice := getTPrice(age);
+    PRINT("The price of your movie ticket is: $" + ticketPrice);
+END
