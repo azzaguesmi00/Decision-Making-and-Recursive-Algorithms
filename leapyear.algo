@@ -1,0 +1,23 @@
+FUNCTION LeapY(x: INTEGER) : BOOLEAN
+VAR
+    Leap : BOOLEAN;
+BEGIN
+    IF (x % 400 = 0) THEN
+        Leap := TRUE; 
+    ELSE_IF (x % 100 <> 0) AND (x % 4 = 0) THEN
+        Leap := TRUE; 
+    ELSE
+        Leap := FALSE;
+    END_IF
+    RETURN Leap;
+END
+
+
+VAR
+    year : INTEGER;
+    res : BOOLEAN;
+BEGIN
+    year := 2020;
+    res := LeapY(year);
+    PRINT(res);
+END
